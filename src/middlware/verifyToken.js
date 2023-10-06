@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const User = require('../model/User.schema')
 
-const verifyToken = (req, res) => {
+const verifyToken = (req, res,next) => {
   if (req.headers && req.headers.authorization) {
     jwt.verify(
       req.headers.authorization,

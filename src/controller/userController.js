@@ -5,7 +5,7 @@ const { fetchNews } = require("../helper/fetchNews");
 
 
 let newsArr =[{
-  email:"souhardya@gmail.com",
+  email:"souhardyaroy79@gmail.com",
   newPrefs :["sports","politics","finance"]
 },
 {
@@ -58,6 +58,7 @@ const userLogin = async (req, res) => {
 const getPref =  (req, res) => {
   try {
     if (req.user) {
+    console.log(req.user.email)
       const userPrefs = newsArr.filter(val => val.email === req.user.email);
       if (userPrefs.length > 0) {
         return res.status(200).json(userPrefs[0].newPrefs);
